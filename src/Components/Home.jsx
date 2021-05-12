@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import styles from "../Styles/Home.module.css";
-import {Test} from "../Components/Test"
+import {Card }from "../Components/Card"
 import EndlessScroll from 'react-endless-scroll'
-
 
 const Home = () => {
    
-    const [cards, setCards] = useState([])
+    const [cards, setCards] = useState(["945add"])
     
     const fetch = () => {
-        alert("Page Loaded")
-        // setCards([...cards , <Test/>,<Test/>, <Test/>])
+        let randomColor = ((1<<24)*Math.random() | 0).toString(16)
+        setCards([...cards , randomColor])
     }
 
     useEffect(() => {
@@ -19,17 +18,19 @@ const Home = () => {
 
     return (
         <div className={styles.wrapper}>
-            <h1>Home</h1>
+
             <EndlessScroll
             onReachBottom={fetch}
             isLoading={false}
             hasMore={true}
             >
-            {
-                cards.map((item) => (
-                    item
-                ))
-            }
+            <div className={styles.cardDiv}>
+                {
+                    cards.map((item) => (
+                        <Card key={item} color={item}/>
+                    ))
+                }
+            </div>
             </EndlessScroll>
         </div>
     )

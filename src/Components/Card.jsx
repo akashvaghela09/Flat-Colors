@@ -1,9 +1,12 @@
 import React from 'react';
+import styles from "../Styles/Home.module.css";
+import Ripples from 'react-ripples'
 
 const Card = ({color}) => {
-    console.log(color);
     return (
-        <div>{color}</div>
+        <Ripples>
+            <div className={styles.card} style={{background: `#${color}`}}>#{color}</div>
+        </Ripples>
     )
 }
 
