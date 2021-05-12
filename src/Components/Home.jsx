@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <div className={styles.wrapper}>
             <h1 onClick={() => {history.push("/")}} className={styles.header}> Flat Colors</h1>
-            <img onClick={()=> window.open("https://github.com/akashvaghela09", "_blank")} className={styles.gitLogo} src="./gitlogo.png" alt="GitHub"/>
+            <img onClick={()=> window.open("https://github.com/akashvaghela09/Flat-Colors", "_blank")} className={styles.gitLogo} src="./gitlogo.png" alt="GitHub"/>
             <EndlessScroll
             onReachBottom={fetch}
             isLoading={false}
