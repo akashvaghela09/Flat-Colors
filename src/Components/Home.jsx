@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from "../Styles/Home.module.css";
 import {Card }from "../Components/Card"
 import EndlessScroll from 'react-endless-scroll'
+import { useHistory } from 'react-router';
 
 const Home = () => {
    
-    const [cards, setCards] = useState(["945add"])
-    
+    const [cards, setCards] = useState([ ])
+    const history = useHistory();
     const fetch = () => {
-        let randomColor = ((1<<24)*Math.random() | 0).toString(16)
+        let randomColor = `rgb(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)})`
         setCards([...cards , randomColor])
     }
 
-    useEffect(() => {
-        
-    }, []);
-
     return (
         <div className={styles.wrapper}>
-
+            <h1 onClick={() => {history.push("/")}} className={styles.header}> Flat Colors</h1>
+            <img onClick={()=> window.open("https://github.com/akashvaghela09", "_blank")} className={styles.gitLogo} src="./gitlogo.png" alt="GitHub"/>
             <EndlessScroll
             onReachBottom={fetch}
             isLoading={false}
