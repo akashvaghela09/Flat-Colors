@@ -11,7 +11,7 @@ const Card = ({color}) => {
         
         <Ripples>
             {
-                toastStatus && git 
+                toastStatus &&
                 <Fade style={{zIndex: "100"}}>
                 <h3 className={styles.toast}>{color} Copied</h3>
                 </Fade>
