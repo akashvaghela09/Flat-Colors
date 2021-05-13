@@ -9,7 +9,6 @@ Flat Colors is a color palette generator website. every time it gives different 
 * CSS
 * JavaScript
 * React
-* Redux
 
 #### Other Libraries Used
 * [React Awesome Reveal](https://www.npmjs.com/package/react-awesome-reveal)
