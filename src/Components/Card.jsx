@@ -21,7 +21,7 @@ const Card = ({color}) => {
                     setToastStatus(true); 
                     setTimeout(() => {
                         setToastStatus(false)
-                    }, 1200);
+                    }, 1500);
                     navigator.clipboard.writeText(color)
                 }} 
                 
